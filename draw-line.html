@@ -14,26 +14,27 @@
         const canvas = document.getElementById('canvasId'),
             ctx = canvas.getContext('2d');
         //triangle
-        // ctx.beginPath();
-        // ctx.moveTo(75, 50);
-        // ctx.lineTo(80, 55);
-        // ctx.lineTo(80, 45);
-        // ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(10, 20);
+        ctx.lineTo(30, 40);
+        ctx.lineTo(30, 0);
+        ctx.fill();
         // Filled triangle
         ctx.beginPath();
-        ctx.moveTo(25, 25);
-        ctx.lineTo(105, 25);
-        ctx.lineTo(25, 105);
+        ctx.moveTo(50, 5);
+        ctx.lineTo(80, 5);
+        ctx.lineTo(50, 40);
         ctx.fill();
 
-        // Stroked triangle
+        // // Stroked triangle
         ctx.beginPath();
-        ctx.moveTo(125, 125);
-        ctx.lineTo(125, 45);
-        ctx.lineTo(45, 125);
+        ctx.moveTo(60, 40);
+        ctx.lineTo(90, 40);
+        ctx.lineTo(90, 6);
         ctx.closePath();
         ctx.stroke();
-        //face
+
+        // //face
         ctx.beginPath();
         ctx.arc(225, 75, 50, 0, Math.PI * 2, true); // Outer circle
         ctx.moveTo(260, 75);
