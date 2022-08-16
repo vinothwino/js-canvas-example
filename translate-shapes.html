@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvasId" width="900" height="900"></canvas>
+    <script>
+        const canvas = document.getElementById('canvasId'),
+            ctx = canvas.getContext('2d');
+        //Translate with rotate
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                ctx.save();
+                ctx.fillStyle = `rgb(${51 * i}, ${255 - 51 * i}, 255)`;
+                ctx.strokeStyle = `orangered`;
+                ctx.translate(10 + j * 50, 10 + i * 50);
+                ctx.rotate((Math.PI / 180) * 25)
+                ctx.fillRect(0, 0, 25, 25);
+                ctx.restore();
+            }
+        }
+        //scale
+        ctx.font = "24px sanserif"
+        // ctx.scale(0.5,)
+        ctx.fillText("TRANSLATE", 10, 190)
+
+        ctx.scale(0.6, 0.6); // scaled -60%
+        ctx.arc(50, 450, 50, 0, Math.PI)
+        ctx.stroke();
+        ctx.fillText("SCALE", 10, 550)
+    </script>
+</body>
+
+</html>
