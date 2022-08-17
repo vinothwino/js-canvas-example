@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvasId"></canvas>
+    <script>
+        const canvas = document.getElementById('canvasId'),
+            ctx = canvas.getContext('2d');
+        ctx.fillRect(0, 0, 150, 150);
+        ctx.translate(75, 75);
+
+        // Create a circular clipping path
+        ctx.beginPath();
+        ctx.arc(0, 0, 60, 0, Math.PI * 2, true);
+        ctx.clip();
+
+        // draw background
+        const lingrad = ctx.createLinearGradient(0, -75, 0, 75);
+        lingrad.addColorStop(0, '#232256');
+        lingrad.addColorStop(1, '#143778');
+
+        ctx.fillStyle = lingrad;
+        ctx.fillRect(-75, -75, 150, 150);
+    </script>
+</body>
+
+</html>
